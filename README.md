@@ -8,8 +8,7 @@ Inspired by [Herdr](https://herdr.dev/) · Powered by [ECA](https://eca.dev/) ·
 
 [![Doom Emacs](https://img.shields.io/badge/Doom-Emacs-blueviolet?logo=gnuemacs&logoColor=white)](https://github.com/doomemacs/doomemacs)
 [![ECA](https://img.shields.io/badge/Runtime-ECA.dev-00ADD8)](https://eca.dev/)
-[![Protocol](https://img.shields.io/badge/Telemetry-OSC%207501-orange)](https://mitchellh.com/writing/program-status-osc7501)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License: EUPL 1.2](https://img.shields.io/badge/License-EUPL_1.2-blue.svg)](LICENSE)
 
 </div>
 
