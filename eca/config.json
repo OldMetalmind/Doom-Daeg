@@ -1,0 +1,21 @@
+{
+  "$schema": "https://eca.dev/schemas/config.json",
+  "defaultAgent": "deag-orchestrator",
+  "rules": [
+    { "path": "~/.config/eca/AGENTS.md" }
+  ],
+  "toolCall": {
+    "approval": {
+      "allow": {
+        "eca__skill": true,
+        "eca__shell_command": [
+          "~/.config/eca/skills/doom-self-build/scripts/eval-elisp.sh*",
+          "~/.config/eca/skills/doom-self-build/scripts/doom-sync.sh*",
+          "~/.config/eca/skills/osc-agent-spawn/scripts/spawn-terminal.sh*",
+          "~/.config/eca/skills/osc-agent-spawn/scripts/osc7501-wrap.sh*",
+          "emacsclient -e *"
+        ]
+      }
+    }
+  }
+}

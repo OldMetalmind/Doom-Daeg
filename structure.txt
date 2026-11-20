@@ -1,0 +1,32 @@
+doom-deag/
+├── README.md
+├── install.sh
+├── uninstall.sh
+├── AGENTS.md
+├── eca/
+│   ├── config.json
+│   ├── agents/
+│   │   ├── deag-orchestrator.md
+│   │   ├── doom-architect.md
+│   │   └── terminal-worker.md
+│   ├── rules/
+│   │   └── doom-elisp-safety.md
+│   ├── skills/
+│   │   ├── doom-self-build/
+│   │   │   ├── SKILL.md
+│   │   │   └── scripts/
+│   │   │       ├── eval-elisp.sh
+│   │   │       └── doom-sync.sh
+│   │   └── osc-agent-spawn/
+│   │       ├── SKILL.md
+│   │       └── scripts/
+│   │           ├── osc7501-wrap.sh
+│   │           └── spawn-terminal.sh
+│   └── commands/
+│       ├── deag.md
+│       ├── build-ui.md
+│       ├── spawn-agent.md
+│       └── agent-status.md
+└── doom/
+    └── lisp/
+        └── doom-deag.el
