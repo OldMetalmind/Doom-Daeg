@@ -45,10 +45,15 @@ ln -sfn "$REPO_DIR/AGENTS.md" "$ECA_DIR/AGENTS.md"
 ln -sfn "$REPO_DIR/eca/config.json" "$ECA_DIR/config.json"
 ln -sfn "$REPO_DIR/eca/agents" "$ECA_DIR/agents"
 ln -sfn "$REPO_DIR/eca/rules" "$ECA_DIR/rules"
-ln -sfn "$REPO_DIR/eca/skills" "$ECA_DIR/skills"
-ln -sfn "$REPO_DIR/eca/commands" "$ECA_DIR/commands"
+# Skills are copied (not symlinked) so ECA sees ordinary files in its config dir.
+if [[ -L "$ECA_DIR/skills" ]]; then
+  rm -f "$ECA_DIR/skills"  # replace a symlink left by an older install
+fi
+mkdir -p "$ECA_DIR/skills"
+cp -R "$REPO_DIR/eca/skills/." "$ECA_DIR/skills/"
+chmod +x "$ECA_DIR"/skills/*/scripts/*.sh
 
-chmod +x "$REPO_DIR"/eca/skills/*/scripts/*.sh
+ln -sfn "$REPO_DIR/eca/commands" "$ECA_DIR/commands"
 
 # 4. Link Doom Deag runtime module
 ln -sfn "$REPO_DIR/doom/lisp/doom-deag.el" "$TARGET_DOOMDIR/lisp/doom-deag.el"

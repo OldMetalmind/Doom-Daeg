@@ -21,7 +21,7 @@ cd ~/.local/share/doom-deag
 The installer:
 
 - detects `$DOOMDIR` (or `~/.config/doom`, or `~/.doom.d`) and the `doom` CLI
-- symlinks the ECA config, agents, rules, skills, and commands into `~/.config/eca` (or `$XDG_CONFIG_HOME/eca`)
+- symlinks the ECA config, agents, rules, and commands into `~/.config/eca` (or `$XDG_CONFIG_HOME/eca`), and **copies** the `eca/skills/` tree there as ordinary files (replacing an older symlink if present)
 - symlinks `doom/lisp/doom-deag.el` into `$DOOMDIR/lisp/`
 - adds `(load! "lisp/doom-deag")` to `config.el` and the `eca` package recipe to `packages.el`, inside managed fenced blocks
 - runs `doom sync` if `eca-emacs` is not installed, and installs `~/.local/bin/eca` if the server binary is missing
@@ -100,7 +100,7 @@ cd ~/.local/share/doom-deag
 doom sync
 ```
 
-This removes the symlinks and the managed fenced blocks from `config.el` and `packages.el`. It does not remove the downloaded `eca` binary or the `eca-emacs` package; `doom sync` prunes the latter.
+This removes the symlinks, the copied skills, and the managed fenced blocks from `config.el` and `packages.el`. It does not remove the downloaded `eca` binary or the `eca-emacs` package; `doom sync` prunes the latter.
 
 ## Troubleshooting
 

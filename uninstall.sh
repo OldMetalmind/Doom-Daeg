@@ -28,7 +28,16 @@ remove_fenced_block() {
   fi
 }
 
-rm -f "$ECA_DIR/AGENTS.md" "$ECA_DIR/config.json" "$ECA_DIR/agents" "$ECA_DIR/rules" "$ECA_DIR/skills" "$ECA_DIR/commands"
+rm -f "$ECA_DIR/AGENTS.md" "$ECA_DIR/config.json" "$ECA_DIR/agents" "$ECA_DIR/rules" "$ECA_DIR/commands"
+
+# Skills are copies; remove only the ones Doom Deag installed.
+if [[ -L "$ECA_DIR/skills" ]]; then
+  rm -f "$ECA_DIR/skills"  # legacy symlink from older installs
+elif [[ -d "$ECA_DIR/skills" ]]; then
+  rm -rf "$ECA_DIR/skills/doom-self-build" "$ECA_DIR/skills/osc-agent-spawn"
+  rmdir "$ECA_DIR/skills" 2>/dev/null || true
+fi
+
 rm -f "$TARGET_DOOMDIR/lisp/doom-deag.el"
 
 remove_fenced_block "$TARGET_DOOMDIR/packages.el"
