@@ -126,25 +126,11 @@ emacsclient -e '(doom-deag-read-agent-tail "builder" 40)'
 
 `doom-architect` follows a strict lifecycle: inspect existing bindings → write Doom-flavoured Elisp (`use-package!`, `after!`, `map!`, `setq!`) → **live-test via `eval-elisp.sh` before writing to disk** → persist to `$DOOMDIR/lisp/` → load from `config.el` → run `doom-sync.sh` first if a package was added. Installer-managed fenced blocks (`;; >>> doom-deag >>>`) are rewritten on install/uninstall, so your own code belongs outside them.
 
-## Repository layout
-
-| Path | Contents |
-| --- | --- |
-| `doom/lisp/doom-deag.el` | State registry, OSC handler, modeline segment, vterm docking, `SPC a` map, ECA launcher. |
-| `eca/agents/` | `deag-orchestrator`, `doom-architect`, `terminal-worker`. |
-| `eca/commands/` | `/deag`, `/build-ui`, `/spawn-agent`, `/agent-status`. |
-| `eca/skills/` | `osc-agent-spawn` and `doom-self-build` (copied into ECA config by the installer). |
-| `eca/config.json` | Default agent, rules, pre-approved tool calls. |
-| `install.sh` / `uninstall.sh` | Link/copy config, manage fenced blocks, install the `eca` binary. |
-| `bootstrap-doom-deag.sh` | Clone the repo into a target directory. |
-| `QUICKSTART.md`, `KEYBINDINGS-AND-COMMANDS.md`, `gaps.md` | Setup guide, full reference, and the current gap list. |
-
 ## Docs
 
 - [Quickstart](QUICKSTART.md) — install, first agent, monitoring, uninstall.
 - [Keybindings and commands](KEYBINDINGS-AND-COMMANDS.md) — every command, API function, script, and state.
 - [Architecture contract](AGENTS.md) — the runtime/UI boundary and self-building protocol.
-- [Known gaps](gaps.md) — open issues, including a weak OSC path on Emacs builds without `osc.el` and the `$XDG_CONFIG_HOME` path mismatch.
 
 ## License
 
