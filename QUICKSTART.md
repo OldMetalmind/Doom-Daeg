@@ -13,7 +13,7 @@ This guide takes you from a working Doom Emacs install to a running terminal age
 ## 1. Install
 
 ```bash
-git clone <repository-url> ~/.local/share/doom-deag
+git clone https://github.com/OldMetalmind/Doom-Daeg.git ~/.local/share/doom-deag
 cd ~/.local/share/doom-deag
 ./install.sh
 ```
