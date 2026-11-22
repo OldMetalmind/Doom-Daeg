@@ -102,6 +102,6 @@ Status is delivered two ways: an OSC 7501 escape sequence on the PTY, and a dire
 
 The default agent is `deag-orchestrator`, and `~/.config/eca/AGENTS.md` is loaded as a rule.
 
-## Known gap
+## Self-build skill
 
-`eca/skills/doom-self-build/SKILL.md` is referenced by `AGENTS.md` and `doom-architect` but is not present in the repository; only its two scripts ship. The `doom-self-build` scripts remain usable directly.
+`eca/skills/doom-self-build/SKILL.md` documents the live-test-then-persist lifecycle that `AGENTS.md` and `doom-architect` refer to. `install.sh` copies it (and its scripts) to `~/.config/eca/skills/doom-self-build/`, so ECA can load it by name.

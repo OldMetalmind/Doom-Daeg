@@ -107,5 +107,5 @@ This removes the symlinks, the copied skills, and the managed fenced blocks from
 - **Agent terminals do not render:** enable `vterm` under `:term` in `init.el`, then restart Emacs.
 - **`ECA server binary not found`:** check that `~/.local/bin/eca` exists and is on `PATH`, or reinstall.
 - **`SPC a` no longer opens the apps menu:** expected; Doom Deag uses that prefix. Run `SPC h SPC` and search for `doom-deag` to find every command.
-- **`/build-ui` cannot load its skill:** the repository currently ships `doom-self-build/scripts/` but no `eca/skills/doom-self-build/SKILL.md`. The scripts still work directly; see [Keybindings and Commands](KEYBINDINGS-AND-COMMANDS.md).
+- **`/build-ui` cannot load its skill:** check that `~/.config/eca/skills/doom-self-build/SKILL.md` exists after install; `install.sh` copies it from `eca/skills/doom-self-build/`. If `$XDG_CONFIG_HOME` is set, ECA's config lives under that path instead — point ECA there or adjust the scripts' hardcoded `~/.config/eca` paths.
 - **`XDG_CONFIG_HOME` is set:** `install.sh` honours it, but the shell scripts hardcode `~/.config/eca`. Keep the ECA config there or adjust the paths in those scripts.
